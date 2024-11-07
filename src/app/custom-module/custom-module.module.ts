@@ -5,12 +5,14 @@ import { CustomModuleRoutingModule } from './custom-module-routing.module';
 import { MyComponent } from '../my-component/my-component.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ContactComponent } from '../contact/contact.component';
 
 
 
 @NgModule({
   declarations: [
-  MyComponent
+  MyComponent,
+  ContactComponent
   ],
   imports: [
     CommonModule,
@@ -18,6 +20,6 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     CustomModuleRoutingModule
   ],
-  exports:[MyComponent]
+  exports:[MyComponent,ContactComponent]
 })
 export class CustomModuleModule { }
