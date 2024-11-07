@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class MyComponent {
 
+title:string = "This is our One way Data binding";
+age:any=10
+CopyText:any="Prashant"
+testData:string=''
+
+myevent(data:any){
+ this.testData = data+"testsing"
 }
+
+}
+
+
+
+// Data Binding
+
+// one way data binding
+ //interpolation   {{}}
+
+
+// two data binding

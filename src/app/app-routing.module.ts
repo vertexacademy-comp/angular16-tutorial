@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CustomModuleModule } from './custom-module/custom-module.module';
+import { MyComponent } from './my-component/my-component.component';
 
 const routes: Routes = [
-  {path:'/', component:CustomModuleModule}
+  {path:'home', loadChildren: () => import('./custom-module/custom-module.module')
+    .then(m => m.CustomModuleModule) },
+  
+
 ];
 
 @NgModule({
