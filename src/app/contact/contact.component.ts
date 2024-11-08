@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit{
   @Output() childContactData = new EventEmitter<any>(); 
 
   ngOnInit() {
-   // this.childContactData.emit(this.title)
+   this.childContactData.emit(this.title)
   }
 
   saveButtonClick(){
@@ -22,7 +22,7 @@ export class ContactComponent implements OnInit{
   }
   
   // ngOnInit(){
-  //   this.title = 
+  //   this.title = "OK"
   // }
 
 }
