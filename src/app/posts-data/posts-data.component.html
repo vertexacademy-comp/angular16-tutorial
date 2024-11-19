@@ -1,0 +1,56 @@
+
+
+<!-- <p *ngFor="let post of postData">{{post.userId}}</p> -->
+
+
+<table style="border: 1px solid black;">
+<thead >
+    <tr>
+        <th>User Id</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Body</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let post of postData">
+        <td>{{post.userId}}</td>
+        <td>{{post.id}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+    </tr>
+</tbody>
+
+
+</table>
+
+{{roles}}
+
+<h1 [ngClass]="{'success':formSubmitted}" *ngIf="formSubmitted">
+    Form Submitted Successfully 
+</h1>
+<h1 [ngStyle]="{'color':'red'}" *ngIf="!formSubmitted">
+    
+    Form Submitted {{formSubmitted}}
+
+</h1>
+
+
+<button (click)="submit()"> Submit</button>
+
+<div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'red'">Color Red</h1>
+    <h1 *ngSwitchCase="'blue'">Color Red</h1>
+    <h1 *ngSwitchCase="'green'">Color Red</h1>
+    <h1 *ngSwitchCase="'yellow'">Color Red</h1>
+</div>
+
+
+<h1 appHiighlight>This is custom directive</h1>
+
+<!-- 
+
+1. attribute directive==ngStyle,ngSrc,ngClass
+2. structural directive=== ngFor, ngIf, ngSwitch
+3. custom directive==
+4. component directive -->

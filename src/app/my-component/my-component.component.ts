@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PostsDataService } from '../Service/posts-data-service.service';
 
 @Component({
   selector: 'app-my-component',
@@ -7,6 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MyComponent implements OnInit{
 
+  postData:any
+
+  constructor(private postService: PostsDataService){}
   @Input() title:string=''
 
 //title:string = "This is our One way Data binding";
@@ -21,8 +25,20 @@ myevent(data:any){
 
 ngOnInit(): void {
   this.contactData = "Prashant"
+  this.getData()
 }
 
+getData(){
+  this.postService.getPostData().subscribe({
+    next:(res)=>{
+      this.postData = res
+      console.log(this.postData)
+    },
+    error:(err)=>{
+      console.log(err)
+    }
+  })
+}
 
 }
 
