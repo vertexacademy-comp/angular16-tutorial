@@ -4,7 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomModuleModule } from './custom-module/custom-module.module';
 import {HttpClientModule} from '@angular/common/http';
-import { HighlightDirective } from './highlight.directive';
+import { FilterByLengthPipe } from './filter-by-length.pipe';
+import { GetAgePipe } from './get-age.pipe';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { HighlightDirective } from './highlight.directive';
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    CustomModuleModule,
+    
     HttpClientModule
     
   ],

@@ -9,23 +9,23 @@ import { ContactComponent } from '../contact/contact.component';
 import { PostsDataComponent } from '../posts-data/posts-data.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HighlightDirective } from '../highlight.directive';
-
-
-
+import { FilterByLengthPipe } from '../filter-by-length.pipe';
+import { GetAgePipe } from '../get-age.pipe';
 
 @NgModule({
   declarations: [
   MyComponent,
   ContactComponent,
   PostsDataComponent,
-  HighlightDirective
+  HighlightDirective,
+  FilterByLengthPipe
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
     CustomModuleRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers:[],
   exports:[MyComponent,ContactComponent,PostsDataComponent,HighlightDirective]
