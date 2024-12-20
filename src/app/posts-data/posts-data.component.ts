@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsDataService } from '../Service/posts-data-service.service';
 import { MESSAGE } from '../CONSTANTS';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,15 +12,20 @@ import { MESSAGE } from '../CONSTANTS';
 export class PostsDataComponent implements OnInit{
 postData:any
 userId:any
-constructor(private postService: PostsDataService){}
+routeId:number=0
+constructor(private postService: PostsDataService, private route: ActivatedRoute){}
   
 formSubmitted:boolean = false
 roles:any
+color:string = 'blue';
 
-color:string = 'blue'
+
+
 ngOnInit(){
   this.getPostData()
   this.roles = MESSAGE.ROLES.STORE_ADMIN
+  console.log(this.route.snapshot)
+  this.routeId =this.route.snapshot.params['id']
   }
 
 

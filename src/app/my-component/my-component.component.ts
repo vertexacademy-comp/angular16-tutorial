@@ -40,7 +40,7 @@ myPromise$: Promise<string> = Promise.resolve("hellow wordl")
 dob= '2000-03-10' 
 
 newDob = this.agePipe.transform(this.dob)
-
+name:any
 myevent(data:any){
  this.testData = data+"testsing"
 }
@@ -48,6 +48,11 @@ myevent(data:any){
 ngOnInit(): void {
   this.contactData = "Prashant"
   this.getData()
+  this.postService.namesubject$.subscribe({
+    next:(resp)=>{
+     this.name = resp
+    }
+  })
 }
 
 getData(){

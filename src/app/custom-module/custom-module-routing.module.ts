@@ -7,7 +7,10 @@ import { PostsDataComponent } from '../posts-data/posts-data.component';
 const routes: Routes = [
   { path: '', component: MyComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'posts', component: PostsDataComponent }
+  { path: 'posts', component: PostsDataComponent },
+  { path: 'posts/:id', component: PostsDataComponent }
+  //{ path: 'posts', component: PostsDataComponent }
+
 
 ];
 

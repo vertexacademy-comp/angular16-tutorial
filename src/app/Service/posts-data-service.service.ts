@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,11 @@ import { Injectable } from '@angular/core';
 
 
 export class PostsDataService {
+
+
+  private nameSubject = new BehaviorSubject<any>(null)
+  namesubject$ = this.nameSubject.asObservable()
+
 
   constructor(private http:HttpClient) { }
 
@@ -19,4 +25,12 @@ export class PostsDataService {
   //   return this.http.post('',data)
   // }
 
+
+  setNameSubject(value:any){
+    this.nameSubject.next(value)
+  }
+
+  getNameSubject(){
+return this.nameSubject.value
+  }
 }
