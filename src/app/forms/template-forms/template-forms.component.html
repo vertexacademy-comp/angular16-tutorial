@@ -1,0 +1,65 @@
+<div class="container">
+    <h2 class="heading">Template Driven Form</h2>
+    <form #userForm="ngForm" (ngSubmit)="submitForm(userForm)">
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="userDetails.name" required>
+            <div *ngIf="userForm.controls['name'].touched && userForm.controls['name'].invalid" class="text-danger">
+                Name is required.
+              </div>
+      
+          </div>
+          
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [(ngModel)]="userDetails.email" required>
+            <div *ngIf="userForm.controls['email']?.touched && userForm.controls['email']?.invalid" class="text-danger">
+                Please enter a valid email address.
+              </div>
+          </div>
+          
+        <div class="form-group">
+            <label for="name">Address</label>
+            <input type="text" class="form-control" id="address" name="address" [(ngModel)]="userDetails.address" required>
+          </div>
+          
+        <div class="form-group">
+            <label for="name">Age</label>
+            <input type="text" class="form-control" id="age" name="age" [(ngModel)]="userDetails.age" required>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Mobile</label>
+            <input type="number" class="form-control" id="mobile" name="mobile" [minlength]="1" [maxlength]="20" [(ngModel)]="userDetails.mobile" required>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Message</label>
+            <textarea type="text" class="form-control" id="message" name="message" [(ngModel)]="userDetails.message" required></textarea>
+          </div>
+   
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" name="gender" [(ngModel)]="userDetails.gender" required>
+              <option value="" disabled>Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            </div>
+            <br>
+
+            <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+
+    </form>
+  </div>
+
+
+  touched  
+  untouched
+  pristine  dirty
+  valid
+  invalid
+
+

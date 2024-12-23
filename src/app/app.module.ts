@@ -15,7 +15,6 @@ import { GetAgePipe } from './get-age.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    
     HttpClientModule
     
   ],

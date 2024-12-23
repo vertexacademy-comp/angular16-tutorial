@@ -6,6 +6,10 @@ const routes: Routes = [
   //lazy loading
   {path:'home', loadChildren: () => import('./custom-module/custom-module.module')
     .then(m => m.CustomModuleModule) },
+
+    {path:'forms', loadChildren: () => import('./forms/forms.module')
+      .then(m => m.CustomFormModule) },
+      
     // { path: '', redirectTo: 'home2', pathMatch: 'full' }, //default route
     // { path: 'home2', component: AppComponent },
 
