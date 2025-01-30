@@ -10,11 +10,7 @@ export class ReactiveFormsComponent implements OnInit{
   registrationForm!: FormArray;
   userForm!: FormGroup;
 
-  constructor(private fb:FormBuilder){}
- 
- 
- 
-  ngOnInit(): void {
+  constructor(private fb:FormBuilder){
     this.userForm = this.fb.group({
       name: ['', Validators.required],
       age:['', Validators.required],
@@ -22,9 +18,13 @@ export class ReactiveFormsComponent implements OnInit{
       address: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       gender: ['male', Validators.required],
-      message: ['TEst Message', Validators.required]
-
+      message: ['TEst Message', Validators.required],
     })
+  }
+ 
+
+  ngOnInit(): void {
+   
   }
 
   submitForm(){
@@ -32,4 +32,5 @@ export class ReactiveFormsComponent implements OnInit{
     console.log(this.userForm.controls)
     this.userForm.reset()
   }
+
 }
