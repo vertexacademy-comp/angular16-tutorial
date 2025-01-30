@@ -5,4 +5,16 @@
 {{title}}
 
 
-<button (click)="saveButtonClick()">Send Data</button>
+<button (click)="saveButtonClick()">Save Data</button>
+
+<button (click)="sendData('1234')">Send Data in URL</button>
+
+<a  routerLink="/home/posts/1234">Post Component</a>
+<br>
+{{name}}
+
+<input type="text" value="name" [(ngModel)]="name">
+
+<button (click)="setnewName()">Set New Name</button>
+<a routerLink="/home">Go to HOme</a>
+
