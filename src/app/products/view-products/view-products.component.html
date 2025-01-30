@@ -1,0 +1,22 @@
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+                <th scope="col">Category</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products;">
+                <td>{{product.id}}</td>
+                <td>{{product.title}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.image}}</td>
+            </tr>
+        </tbody>
+        </table>
+        
+        
