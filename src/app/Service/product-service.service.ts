@@ -9,6 +9,7 @@ export class ProductServiceService {
   constructor(private http:HttpClient) { }
   
   baseUrl = "https://fakestoreapi.com/products/"
+  
     getProductsData(){
       return this.http.get(this.baseUrl)  
     }
