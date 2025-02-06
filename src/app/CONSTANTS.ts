@@ -5,3 +5,7 @@ export const MESSAGE = {
         "STORE_USER":'store_user',
     },
 }
+
+
+
+export const baseURL = "https://dummyjson.com/users/"
