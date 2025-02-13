@@ -20,6 +20,8 @@ export class UserServiceService {
     return this.http.get(this.baseUrl+id)
   }
   
-
+  updateSingleUserData(id:any, data:any){
+    return this.http.put(this.baseUrl+id,data)
+  }
 
 }
