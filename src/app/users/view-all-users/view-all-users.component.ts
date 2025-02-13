@@ -9,6 +9,7 @@ import { UserServiceService } from 'src/app/Service/user-service.service';
 })
 export class ViewAllUsersComponent implements OnInit{
 allUserData:any
+singleUserData:any
 userForm!: FormGroup;
 
   constructor(private userService: UserServiceService,private fb:FormBuilder){
@@ -39,14 +40,13 @@ userForm!: FormGroup;
   }
 
   editUser(user:any){
-    this.userForm.controls['firstName'].patchValue(user?.firstName);
-    this.userForm.controls['lastName'].patchValue(user?.lastName);
-    this.userForm.controls['email'].patchValue(user?.email);
-    this.userForm.controls['age'].patchValue(user?.age);
+    this.singleUserData = user
+    
   }
-
-  submitForm(){
-    let formData = this.userForm.getRawValue()
-    console.log(formData)
+  onUserDataChangeEvent(event:any){
+    if(event){
+      console.log(event)
+    }
   }
+  
 }
